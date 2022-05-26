@@ -7,10 +7,22 @@
 <body>
   <script>
     // Your JavaScript goes here!
-    function add7(n) {
-        return n + 7;
+    function ComputerPlay() {
+        const picks = ["Rock", "Paper", "Scissors"];
+        const ind = Math.floor(Math.random() * picks.length);
+        return picks[ind]
     }
-    console.log(add7(2))
+
+    function playRound(playerSelection, compSelection) {
+        let result = ''
+        if ((playerSelection == "rock" && compSelection == "scissors") ||
+            (playerSelection == "paper" && compSelection == "rock") ||
+            (playerSelection == "scissors" && compSelection == "paper")) {
+
+                result = "win!"
+            }
+    }
+    console.log(ComputerPlay())
   </script>
 </body>
 </html>
