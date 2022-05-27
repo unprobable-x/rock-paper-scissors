@@ -8,21 +8,33 @@
   <script>
     // Your JavaScript goes here!
     function ComputerPlay() {
-        const picks = ["Rock", "Paper", "Scissors"];
+        const picks = ["rock", "paper", "scissors"];
         const ind = Math.floor(Math.random() * picks.length);
         return picks[ind]
     }
 
     function playRound(playerSelection, compSelection) {
         let result = ''
+        compSelection = ComputerPlay()
         if ((playerSelection == "rock" && compSelection == "scissors") ||
             (playerSelection == "paper" && compSelection == "rock") ||
             (playerSelection == "scissors" && compSelection == "paper")) {
 
                 result = "win!"
             }
+
+        else if (playerSelection == compSelection){
+            
+                result = "tie!"
+        }
+
+        else {
+
+                result = "lose!"
+        }
+        return result
     }
-    console.log(ComputerPlay())
+    console.log(playRound(playerSelection, compSelection))
   </script>
 </body>
 </html>
