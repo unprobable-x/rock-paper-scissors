@@ -2,68 +2,12 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <title>R. P. S.</title>
 </head>
 <body>
-  <script>
-    // Your JavaScript goes here!
-    function ComputerPlay() {
-        const picks = ["rock", "paper", "scissors"];
-        const ind = Math.floor(Math.random() * picks.length);
-        return picks[ind]
-    }
-
-    function playRound(playerSelection, compSelection) {
-        let result = ''
-        if ((playerSelection.toLowerCase() == "rock" && compSelection == "scissors") ||
-            (playerSelection.toLowerCase() == "paper" && compSelection == "rock") ||
-            (playerSelection.toLowerCase() == "scissors" && compSelection == "paper")) {
-
-                result = 1
-            }
-
-        else if (playerSelection.toLowerCase() == compSelection){
-            
-                result = 0
-        }
-
-        else {
-
-                result = -1
-        }
-        return result
-    }
-
-    function game() {
-        let playerScore = 0
-        let compScore = 0
-        for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Enter your choice.")
-        let compSelection = ComputerPlay()   
-        let outcome = playRound(playerSelection,compSelection)
-        if (outcome == 1) {
-            playerScore +=1
-        }
-        else if (outcome == -1) {
-            compScore +=1
-        }
-        else {
-            playerScore +=0
-            compScore +=0
-        }
-        }
-        if (playerScore > compScore) {
-            final = "You Win!"
-        }
-        else if (compScore > playerScore) {
-            final = "You Lose!"
-        }
-        else {
-            final = "It's a....IT'S A TRAP!!!"
-        }
-        return final
-    }
-    console.log(game())
-  </script>
+    <button id="0">Rock</button>
+    <button id="1">Paper</button>
+    <button id="2">Scissors</button>
 </body>
+<script src ="javascript.js"></script> 
 </html>
