@@ -1,7 +1,5 @@
 const optionBtn = document.querySelectorAll('div.optionBtn button');
 
-optionBtn.forEach(button => { button.addEventListener('click', (event) => {console.log(event.target.value);}) });
-
 let playerScore = 0;
 let compScore = 0;
 
@@ -11,8 +9,9 @@ function ComputerPlay() {
     return picks[ind]
 }
 
-function playRound(playerSelection) {
-    let compSelection = ComputerPlay(); 
+function playRound(e) {
+    let compSelection = ComputerPlay();
+    let playerSelection = e.target.textContent; 
     if ((playerSelection.toLowerCase() == "rock" && compSelection == "scissors") ||
         (playerSelection.toLowerCase() == "paper" && compSelection == "rock") ||
         (playerSelection.toLowerCase() == "scissors" && compSelection == "paper")) {
@@ -33,12 +32,5 @@ function playRound(playerSelection) {
     return playerScore, compScore;
 }
 
-
-function getPlayerChoice(e) {
-    let playerSelection= (e.target.id);
-    playerChoice = e.target.textContent;
-    playRound(playerChoice);
-  }
-
-// console.log(e.target.id)
+optionBtn.forEach(button => button.addEventListener('click', playRound));
 
