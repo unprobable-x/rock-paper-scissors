@@ -29,8 +29,15 @@ function playRound(e) {
 
             compScore +=1
     }
+    const player = document.querySelector('.player');
+    const comp = document.querySelector('.comp');
+    player.textContent = playerScore;
+    comp.textContent = compScore;
     return playerScore, compScore;
 }
 
 optionBtn.forEach(button => button.addEventListener('click', playRound));
+
+
+
 
